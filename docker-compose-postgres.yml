@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  postgres-db:
+    networks:
+      - local-shared-network
+    image: postgres:alpine
+    environment:
+      - POSTGRES_USER=postgres 
+      - POSTGRES_PASSWORD=password
+    ports:
+      - "5555:5432"
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
+
+networks:
+  local-shared-network:
+    external: true
