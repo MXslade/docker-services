@@ -5,9 +5,6 @@ services:
     networks:
       - local-shared-network
     image: mongo:7-jammy
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
-      - MONGO_INITDB_ROOT_PASSWORD=password
     ports:
       - "27017:27017"
     volumes:
